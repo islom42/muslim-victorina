@@ -1,0 +1,249 @@
+.container {
+  height: 100vh;
+  display: flex;
+  background-image: linear-gradient(to top left, #020230, #28287c);
+  color: #fff;
+}
+.main {
+  width: 75%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230f3),
+    url("assets/bg.jpg") center;
+  display: flex;
+  flex-direction: column;
+}
+.quiz {
+  height: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.question {
+  width: 80%;
+  text-align: center;
+  background-image: linear-gradient(#100241, black);
+  border: 2px solid whitesmoke;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.answers {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.answer {
+  width: 40%;
+  padding: 10px;
+  background-image: linear-gradient(#0e0124, #22074d);
+  border-radius: 15px;
+  border: 2px solid whitesmoke;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 10px 20px 10px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.answer:hover {
+  background-image: linear-gradient(#22074d, #0e0124);
+}
+.answer:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+.answer.active {
+  background: mediumblue;
+  transform: scale(0.98);
+}
+.answer.correct {
+  animation: correct 3s ease forwards;
+}
+.answer.wrong {
+  animation: wrong 3s ease forwards;
+}
+.main__top {
+  height: 50%;
+  position: relative;
+}
+.main__top .timer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  left: 70px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.main__bottom {
+  height: 50%;
+}
+.pyramid {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pyramid__moneyList {
+  list-style-type: none;
+  width: 100%;
+  padding: 20px;
+}
+.pryramid__moneyList-item {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+.pryramid__moneyList-item.active {
+  background-color: teal;
+}
+.moneyList-item__number {
+  font-size: 1.2rem;
+  font-weight: 200;
+  width: 30%;
+}
+.moneyList-item__amount {
+  font-size: 20px;
+}
+.lose-game {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.start {
+  width: 80%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+}
+small {
+  font-size: 2rem;
+}
+/*  */
+.label-float {
+  position: relative;
+  padding-top: 13px;
+}
+
+.label-float input {
+  border: 1px solid lightgrey;
+  background-image: linear-gradient(#0e0124, #22074d);
+  border-radius: 5px;
+  color: whitesmoke;
+  outline: none;
+  min-width: 300px;
+  padding: 15px 20px;
+  font-size: 16px;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -webkit-appearance: none;
+}
+
+.label-float input:focus {
+  border: 2px solid whitesmoke;
+}
+
+.label-float input::placeholder {
+  color: transparent;
+}
+
+.label-float label {
+  pointer-events: none;
+  position: absolute;
+  top: calc(50% - 8px);
+  left: 10px;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.label-float input:focus + label,
+.label-float input:not(:placeholder-shown) + label {
+  font-size: 20px;
+  font-weight: bold;
+  top: -25px;
+  left: 0;
+  color: whitesmoke;
+}
+.btn {
+  width: 15%;
+  border: 1px solid whitesmoke;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: whitesmoke;
+  border-radius: 10px;
+  background: transparent;
+  padding: 1rem 1.75rem;
+  transition: all 0.3s linear;
+  background-image: linear-gradient(#0e0124, #22074d);
+}
+.btn:hover {
+  background-image: linear-gradient(#22074d, #0e0124);
+}
+.btn:active {
+  transform: scale(0.98);
+  outline: none;
+}
+.author {
+  text-decoration: none;
+  color: rgba(184, 176, 176, 0.89);
+}
+/*  */
+@keyframes correct {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background-image: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: green;
+  }
+}
+@keyframes wrong {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background-image: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: crimson;
+  }
+}
